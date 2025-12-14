@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
+import logo from '../logo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,18 +13,18 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8 flex items-center justify-center">
+          <div className="relative w-10 h-10 flex items-center justify-center">
             <motion.div 
                 animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="text-orange-500"
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                className="w-full h-full flex items-center justify-center"
             >
-                <Sparkles size={32} strokeWidth={1} fill="currentColor" />
+                <img src={logo} alt="SpinTech Logo" className="w-full h-full object-contain"/>
             </motion.div>
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-bold text-lg tracking-tight">SpinTech</span>
-            <span className="font-light text-lg tracking-tight">Design</span>
+            <span className="font-serif-display text-2xl text-charcoal">SpinTech</span>
+            <span className="font-sans text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-gray-500 ml-0.5">Design</span>
           </div>
         </Link>
 

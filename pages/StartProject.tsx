@@ -16,7 +16,7 @@ const StartProject: React.FC = () => {
   };
 
   return (
-    <section className="pt-40 pb-20 px-6 md:px-12 max-w-4xl mx-auto min-h-screen flex flex-col justify-center">
+    <section className="pt-24 md:pt-40 pb-12 md:pb-20 px-6 md:px-12 max-w-4xl mx-auto min-h-screen flex flex-col justify-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

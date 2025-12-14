@@ -8,7 +8,7 @@ import { FaRocket, FaRobot } from 'react-icons/fa';
 const About: React.FC = () => {
   return (
     <>
-      <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-[60vh]">
+      <section className="pt-24 md:pt-40 pb-12 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-[60vh]">
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -84,8 +84,8 @@ const ReviewFAQItem: React.FC<{ question: string; answer: string }> = ({ questio
 
 const Reviews: React.FC = () => {
   return (
-    <>
-      <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
+    <div className="min-h-screen bg-beige-100">
+      <section className="pt-24 md:pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ const Reviews: React.FC = () => {
       </section>
       
       <Services />
-    </>
+    </div>
   );
 };
 

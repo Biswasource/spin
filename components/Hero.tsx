@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="pt-36 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-[70vh] flex flex-col justify-center">
+    <section className="pt-24 md:pt-36 pb-12 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-[70vh] flex flex-col justify-center">
       <div className="max-w-5xl">
         <motion.div
             initial={{ opacity: 0, y: 20 }}

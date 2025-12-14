@@ -49,7 +49,7 @@ const WORK_PROJECTS = [
 
 const Work: React.FC = () => {
   return (
-    <section className="pt-40 pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
+    <section className="pt-24 md:pt-40 pb-12 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

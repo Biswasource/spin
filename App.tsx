@@ -9,6 +9,7 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import StartProject from './pages/StartProject';
 import Work from './pages/Work';
+import BookCall from './pages/BookCall';
 import Lenis from 'lenis';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/start-project" element={<StartProject />} />
             <Route path="/work" element={<Work />} /> {/* Added route for Work component */}
+            <Route path="/book-call" element={<BookCall />} />
           </Routes>
           
           <Footer />

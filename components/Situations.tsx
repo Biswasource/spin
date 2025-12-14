@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Button from './Button';
+import TextReveal from './TextReveal';
 
 interface Situation {
   id: number;
@@ -76,7 +77,7 @@ const SituationCard: React.FC<{ data: Situation }> = ({ data }) => {
       }}
       className="bg-transparent p-0 group perspective-1000 w-full"
     >
-        <div className="bg-beige-50/50 p-8 md:p-12 rounded-3xl border border-charcoal/5 hover:border-charcoal/10 transition-colors duration-500 shadow-sm flex flex-col gap-8 h-full">
+        <div className="bg-transparent p-8 md:p-12 rounded-3xl transition-colors duration-500 flex flex-col gap-8 h-full">
             <blockquote className="font-serif-display text-3xl md:text-4xl lg:text-[2.5rem] text-charcoal leading-[1.15]">
             {data.quote}
             </blockquote>
@@ -108,15 +109,11 @@ const Situations: React.FC = () => {
         {/* Sticky Left Column */}
         <div className="lg:col-span-5 relative">
             <div className="sticky top-32">
-                 <motion.h2 
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                 <TextReveal 
                     className="font-serif-display text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-charcoal mb-8"
                  >
                     Does any of these situations sound familiar to you?
-                 </motion.h2>
+                 </TextReveal>
             </div>
         </div>
 
@@ -124,7 +121,7 @@ const Situations: React.FC = () => {
         <div className="hidden lg:block absolute left-[41.666667%] top-0 bottom-0 w-px bg-charcoal/10" />
 
         {/* Scrollable Right Column */}
-        <div className="lg:col-span-7 flex flex-col gap-16 pl-0 lg:pl-12">
+        <div className="lg:col-span-7 flex flex-col gap-16 pl-0 lg:pl-12 bg-transparent">
             {SITUATIONS.map(situation => (
                 <SituationCard key={situation.id} data={situation} />
             ))}

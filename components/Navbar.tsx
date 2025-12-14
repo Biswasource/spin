@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-beige-100/90 backdrop-blur-md transition-all duration-300 py-6 px-6 md:px-12">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-beige-100/90 backdrop-blur-md transition-all duration-300 py-4 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <div className="relative w-8 h-8 flex items-center justify-center">
             <motion.div 
                 animate={{ rotate: 360 }}
@@ -21,21 +22,24 @@ const Navbar: React.FC = () => {
             </motion.div>
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-bold text-lg tracking-tight">everything</span>
-            <span className="font-light text-lg tracking-tight">design</span>
+            <span className="font-bold text-lg tracking-tight">SpinTech</span>
+            <span className="font-light text-lg tracking-tight">Design</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <a 
+            <Link 
               key={link.label} 
-              href={link.href}
-              className="text-xs font-medium tracking-widest text-charcoal hover:text-orange-600 transition-colors"
+              to={link.href}
+              className="relative text-xs font-medium tracking-widest text-charcoal transition-colors group"
             >
               {link.label}
-            </a>
+              <span 
+                className="absolute left-0 bottom-[-4px] w-full h-[1px] bg-charcoal origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
+              />
+            </Link>
           ))}
           <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
             <Search size={20} />
@@ -62,14 +66,14 @@ const Navbar: React.FC = () => {
           >
             <div className="flex flex-col p-6 gap-4">
               {NAV_LINKS.map((link) => (
-                <a 
+                <Link 
                   key={link.label} 
-                  href={link.href}
+                  to={link.href}
                   className="text-sm font-medium tracking-widest text-charcoal py-2 border-b border-gray-100"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

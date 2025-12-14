@@ -1,21 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TextReveal from './TextReveal';
 
 const BrandPromise: React.FC = () => {
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto bg-beige-100">
       {/* Header */}
       <div className="text-center mb-20 md:mb-32">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="font-serif-display text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-charcoal"
-        >
-          Our Brand Promise,<br />
-          We take ownership. Period.
-        </motion.h2>
+        <div className="font-serif-display text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-charcoal flex flex-col items-center">
+          <motion.span
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+          >
+            Our Brand Promise,
+          </motion.span>
+          <TextReveal className="justify-center mt-2">
+            We take ownership. Period.
+          </TextReveal>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

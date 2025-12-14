@@ -84,7 +84,7 @@ const Services: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Left Column: Heading & Illustration */}
-        <div className="lg:col-span-5 relative flex flex-col justify-between min-h-[500px]">
+        <div className="lg:col-span-5 relative flex flex-col justify-between min-h-[500px] border-r border-charcoal/10">
            <div>
                 <motion.h2 
                     initial={{ opacity: 0, x: -20 }}
@@ -163,11 +163,8 @@ const Services: React.FC = () => {
            </div>
         </div>
 
-        {/* Vertical Divider */}
-        <div className="hidden lg:block absolute left-[41.666667%] top-0 bottom-0 w-px bg-charcoal/10" />
-
         {/* Right Column: Services List */}
-        <div className="lg:col-span-7 pl-0 lg:pl-12 flex flex-col justify-center">
+        <div className="lg:col-span-7 flex flex-col justify-center">
             <ul className="flex flex-col gap-6 md:gap-8 mb-16">
                 {SERVICES_LIST.map((service, index) => (
                     <motion.li 

@@ -1,10 +1,10 @@
 import { NavLink, Project } from './types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'OUR WORK', href: '#' },
-  { label: 'BLOGS', href: '#' },
-  { label: 'CASE STUDIES', href: '#' },
-  { label: 'REVIEWS', href: '#' },
+  { label: 'OUR WORK', href: '/' },
+  { label: 'ABOUT US', href: '/about' },
+  { label: 'BLOGS', href: '/blog' },
+  { label: 'REVIEWS', href: '/reviews' },
   { label: 'CLIENTS', href: '#' },
   { label: 'TEAM', href: '#' },
   { label: 'BOOK A CALL', href: '#' },

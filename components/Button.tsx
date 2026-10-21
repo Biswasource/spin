@@ -6,10 +6,19 @@ interface ButtonProps {
   variant?: 'primary' | 'dark' | 'outline';
   className?: string;
   onClick?: () => void;
+  href?: string;
+  target?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', className = '', onClick }) => {
-  const baseStyles = "px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all duration-300 uppercase inline-block";
+const Button: React.FC<ButtonProps> = ({ 
+  children, 
+  variant = 'primary', 
+  className = '', 
+  onClick,
+  href,
+  target = "_blank"
+}) => {
+  const baseStyles = "px-8 py-4 rounded-full font-medium text-sm tracking-wide transition-all duration-300 uppercase inline-block text-center cursor-pointer";
   
   const variants = {
     primary: "bg-lime-400 text-charcoal hover:bg-lime-500 border border-transparent",
@@ -17,15 +26,20 @@ const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', classNam
     outline: "bg-transparent border border-charcoal/20 hover:border-charcoal text-charcoal",
   };
 
+  const Component = href ? motion.a : motion.button;
+
   return (
-    <motion.button
+    <Component
+      href={href}
+      target={href ? target : undefined}
+      rel={href && target === "_blank" ? "noopener noreferrer" : undefined}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`${baseStyles} ${variants[variant]} ${className}`}
       onClick={onClick}
     >
       {children}
-    </motion.button>
+    </Component>
   );
 };
 

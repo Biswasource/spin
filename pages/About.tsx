@@ -66,10 +66,10 @@ const About: React.FC = () => {
 
         {/* Happy Customers Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-20 border-t border-charcoal/10 mb-20">
-             <StatItem number="150+" label="Happy Customers" />
-             <StatItem number="300+" label="Projects Delivered" />
-             <StatItem number="98%" label="Retention Rate" />
-             <StatItem number="5⭐" label="Average Rating" />
+             <StatItem number="78+" label="Happy Customers" />
+             <StatItem number="82+" label="Projects Delivered" />
+             <StatItem number="95%" label="Retention Rate" />
+             <StatItem number="4.4⭐" label="Average Rating" />
         </div>
 
       </section>

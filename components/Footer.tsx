@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowUpRight, Instagram, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Sparkles, ArrowUpRight, Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -25,16 +25,10 @@ const Footer: React.FC = () => {
                     Let's build something <span className="text-lime-400">extraordinary</span> together.
                 </h2>
                 <div className="flex gap-4">
-                     <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
-                        <Instagram size={18} />
-                     </a>
-                     <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
+                     <a href="https://www.linkedin.com/company/spintech-solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
                         <Linkedin size={18} />
                      </a>
-                     <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
-                        <Twitter size={18} />
-                     </a>
-                     <a href="mailto:hello@spintech.design" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
+                     <a href="mailto:spintechdesign@gmail.com" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-lime-400 hover:text-charcoal hover:border-lime-400 transition-all">
                         <Mail size={18} />
                      </a>
                 </div>
@@ -67,9 +61,10 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
             <p>© 2026 SpinTech Design. All rights reserved.</p>
-            <div className="flex gap-8">
-                <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <div className="flex gap-6 md:gap-8 flex-wrap">
+                <Link to="/employee" onClick={() => window.scrollTo(0,0)} className="hover:text-lime-400 transition-colors">Employee Portal</Link>
+                <Link to="/privacy-policy" onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link to="/terms-of-service" onClick={() => window.scrollTo(0,0)} className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
         </div>
       </div>

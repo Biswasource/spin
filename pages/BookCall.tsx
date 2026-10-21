@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { format, addDays, startOfWeek, endOfWeek, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday } from 'date-fns';
 import { ChevronLeft, ChevronRight, Clock, Calendar as CalendarIcon, ArrowRight, Check } from 'lucide-react';
 import Button from '../components/Button';
+import { db } from '../lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const TIME_SLOTS = [
   "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", 
@@ -22,6 +24,7 @@ const BookCall: React.FC = () => {
     company: '',
     notes: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Calendar Logic
   const monthStart = startOfMonth(currentMonth);
@@ -40,10 +43,39 @@ const BookCall: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStep(3); // Success state
-    console.log("Booking:", { selectedDate, selectedTime, ...formData });
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      // Store booking in Firestore
+      await addDoc(collection(db, "bookings"), {
+        ...formData,
+        selectedDate: selectedDate?.toISOString(),
+        selectedTime,
+        createdAt: serverTimestamp(),
+        status: 'pending'
+      });
+      
+      // Save locally for the Admin panel to read
+      const newBooking = {
+        ...formData,
+        selectedDate: selectedDate?.toISOString(),
+        selectedTime,
+        createdAt: new Date().toISOString(),
+        status: 'pending'
+      };
+      const existing = JSON.parse(localStorage.getItem('spintech_all_calls') || '[]');
+      localStorage.setItem('spintech_all_calls', JSON.stringify([...existing, newBooking]));
+      
+      setStep(3); // Success state
+    } catch (error) {
+      console.error("Error saving booking:", error);
+      alert("Failed to book the call. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -229,11 +261,15 @@ const BookCall: React.FC = () => {
                              />
                      </div>
 
-                     <div className="pt-4">
-                        <Button variant="primary" className="w-full bg-charcoal text-white hover:bg-black flex justify-center items-center gap-2">
-                             ADD EVENT
+                      <div className="pt-4">
+                        <Button 
+                            variant="primary" 
+                            className="w-full bg-charcoal text-white hover:bg-black flex justify-center items-center gap-2 disabled:opacity-70"
+                            disabled={isSubmitting}
+                        >
+                             {isSubmitting ? 'BOOKING...' : 'ADD EVENT'}
                         </Button>
-                     </div>
+                      </div>
                 </form>
              </motion.div>
           )}

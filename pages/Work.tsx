@@ -7,43 +7,59 @@ import TextReveal from '../components/TextReveal';
 const WORK_PROJECTS = [
   {
     id: 1,
-    title: "Lumina Financial",
-    description: "A complete rebranding and digital presence overhaul for a next-gen fintech startup. We focused on trust, clarity, and modern aesthetics.",
-    tags: ["Branding", "Web Design", "Development"],
-    image: "https://picsum.photos/id/1/1200/900",
-    link: "#"
+    title: "Tribes India",
+    description: "An authentic e-commerce platform showcasing handcrafted tribal arts, heritage handlooms, and organic produce. We focused on a design that honors India's rich tribal legacy while providing a modern shopping experience.",
+    tags: ["E-commerce", "Handicrafts", "Culture"],
+    image: "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&q=80&w=1200",
+    link: "https://tribesindia.com/"
   },
   {
     id: 2,
-    title: "Elevate Architects",
-    description: "Minimalist portfolio showcase for an award-winning architectural firm. The design emphasizes space and visual hierarchy.",
-    tags: ["UX/UI", "Development", "SEO"],
-    image: "https://picsum.photos/id/2/1200/900",
-    link: "#"
+    title: "ShopClues",
+    description: "One of India's largest value-store marketplaces. Our work involved optimizing the user journey for a massive product catalog and implementing complex promotional engines for value-conscious shoppers.",
+    tags: ["Marketplace", "Logistics", "Scale"],
+    image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=1200",
+    link: "https://www.shopclues.com/"
   },
   {
     id: 3,
-    title: "Nexus AI",
-    description: "Futuristic interface design for an AI-powered analytics platform. Dark mode aesthetics with neon accents.",
-    tags: ["Product Design", "SaaS", "Animation"],
-    image: "https://picsum.photos/id/3/1200/900",
-    link: "#"
+    title: "Udaan",
+    description: "India's leading B2B trade platform connecting retailers, manufacturers, and wholesalers. We redesigned the interface to handle high-frequency trade volumes and complex supply chain logistics.",
+    tags: ["B2B", "Trade", "Supply Chain"],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+    link: "https://udaan.com/"
   },
   {
     id: 4,
-    title: "GreenLeaf Organics",
-    description: "E-commerce experience for a sustainable lifestyle brand. Seamless checkout and vibrant product storytelling.",
-    tags: ["E-commerce", "Branding", "Social Media"],
-    image: "https://picsum.photos/id/4/1200/900",
-    link: "#"
+    title: "Shiprocket",
+    description: "A comprehensive e-commerce growth partner and logistics aggregator. We developed a powerful dashboard to manage automated shipping, real-time tracking, and multi-channel fulfillment.",
+    tags: ["Logistics", "SaaS", "Automation"],
+    image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?auto=format&fit=crop&q=80&w=1200",
+    link: "https://www.shiprocket.in/"
   },
   {
     id: 5,
-    title: "Velocity Motors",
-    description: "Interactive showroom experience for a luxury electric vehicle manufacturer. High-performance 3D web experience.",
-    tags: ["3D Experience", "Web Design", "Motion"],
-    image: "https://picsum.photos/id/5/1200/900",
-    link: "#"
+    title: "BuyGlass",
+    description: "A specialized e-commerce solution for custom-cut glass and mirrors. Features an intuitive configuration engine for precise measurements and a secure delivery tracking system for fragile goods.",
+    tags: ["D2C", "Customization", "Manufacturing"],
+    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=1200",
+    link: "https://www.buyglass.in/"
+  },
+  {
+    id: 6,
+    title: "Lumina Financial",
+    description: "A complete rebranding and digital presence overhaul for a next-gen fintech startup. We focused on trust, clarity, and modern aesthetics.",
+    tags: ["Branding", "Web Design", "Development"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    link: "https://lumina-fin.vercel.app"
+  },
+  {
+    id: 7,
+    title: "Elevate Architects",
+    description: "Minimalist portfolio showcase for an award-winning architectural firm. The design emphasizes space and visual hierarchy.",
+    tags: ["UX/UI", "Development", "SEO"],
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
+    link: "https://elevate-arch.vercel.app"
   }
 ];
 
@@ -103,7 +119,11 @@ const Work: React.FC = () => {
                     {project.description}
                 </TextReveal>
 
-                <Button variant="outline" className="flex items-center gap-2 group hover:bg-lime-400 hover:text-charcoal hover:border-lime-400">
+                <Button 
+                    variant="outline" 
+                    href={project.link}
+                    className="flex items-center gap-2 group hover:bg-lime-400 hover:text-charcoal hover:border-lime-400"
+                >
                     VIEW SITE
                     <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Button>

@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "firebase": "^12.12.1",
     "framer-motion": "^12.23.26",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
     "lenis": "^1.3.16",
     "lucide-react": "^0.561.0",
     "react": "^19.2.3",

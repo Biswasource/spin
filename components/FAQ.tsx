@@ -10,19 +10,19 @@ interface FAQItem {
 
 const FAQS: FAQItem[] = [
   {
-    question: "Is Everything Design the best Branding Agency for B2B brands?",
+    question: "Is SpinTech Solutions the best Branding Agency for B2B brands?",
     answer: "We strive to be! Our specialized focus on B2B allows us to deeply understand complex value propositions and translate them into simple, compelling visual identities that drive trust and conversion.",
   },
   {
-    question: "How can a brand work with Everything Design for a branding project ?",
+    question: "How can a brand work with SpinTech Solutions for a branding project ?",
     answer: "It starts with a discovery session where we audit your current brand and discuss your goals. From there, we propose a tailored roadmap covering strategy, visual identity, and digital presence.",
   },
   {
-    question: "Who should work with Everything Design?",
+    question: "Who should work with SpinTech Solutions?",
     answer: "We work best with ambitious B2B founders and marketing leaders in Tech, SaaS, and Fintech who recognize that design is a strategic differentiator, not just decoration.",
   },
   {
-    question: "Which are the industries Everything Design Agency works with?",
+    question: "Which are the industries SpinTech Solutions works with?",
     answer: "Our core expertise lies in Cyber Security, Ad Tech, Manufacturing, Logistics, and Enterprise SaaS. We love complex industries that need simplification.",
   },
 ];

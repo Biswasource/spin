@@ -16,14 +16,14 @@ const SITUATIONS: Situation[] = [
     id: 1,
     quote: "“We need branding and website which will communicate what we do, to our target audience in a simple manner.”",
     role: "- B2B Cross Border Trade Platform",
-    description: "Everything Design Agency worked with Ximkart to do a brand refresh, build a visual identity, design & develop the website in webflow.",
+    description: "SpinTech Solutions worked with Ximkart to do a brand refresh, build a visual identity, design & develop the website in webflow.",
     highlight: "Ximkart"
   },
   {
     id: 2,
     quote: "“We find it difficult to convey what our brand stands for and attract great talent.”",
     role: "- Cyber Security Company",
-    description: "Everything Design Agency worked with Fortuna Identity to give the brand a long needed update to be at par with the industry’s advancements whilst retaining domain expertise to attract better talent.",
+    description: "SpinTech Solutions worked with Fortuna Identity to give the brand a long needed update to be at par with the industry’s advancements whilst retaining domain expertise to attract better talent.",
     highlight: "Fortuna Identity"
   }
 ];

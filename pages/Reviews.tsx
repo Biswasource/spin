@@ -5,26 +5,52 @@ import Services from '../components/Services';
 import RevealType from '../components/RevealType';
 
 const REVIEWS = [
-  // ... existing reviews ...
-  {
-    id: 1,
-    client: "Mohan Mohapatra",
-    role: "CEO, TechFlow",
-    text: "SpinTech Design completely transformed our digital presence. Their attention to detail and ability to translate our complex value proposition into a simple, beautiful website was outstanding.",
-    rating: 5
-  },
-  {
-    id: 2,
-    client: "Sasmita Das",
-    role: "Founder, GreenLeaf",
-    text: "The team at SpinTech is top notch. They took ownership of the entire design process and delivered results that exceeded our expectations. Highly recommend!",
-    rating: 5
-  },
   {
     id: 3,
     client: "Sisir Charan Das",
-    role: "Director, FutureCorp",
     text: "Professional, creative, and timely. Working with them was a breeze and the final output is something our whole team is proud of.",
+    rating: 5
+  },
+  {
+    id: 4,
+    client: "Anita Sharma",
+    text: "We wanted a brand that truly stood out, and SpinTech delivered exactly that. The new brand identity has dramatically increased our market trust.",
+    rating: 5
+  },
+  {
+    id: 5,
+    client: "Rahul Verma",
+    text: "They have a deep understanding of the B2B space. The new messaging and visual identity completely changed how prospects perceive us.",
+    rating: 5
+  },
+  {
+    id: 6,
+    client: "Priya Menon",
+    text: "SpinTech has a fantastic process. We never felt lost during the project, and the result was a sophisticated brand that positions us as industry leaders.",
+    rating: 5
+  },
+  {
+    id: 7,
+    client: "Arjun Reddy",
+    text: "Outstanding work on our web app's UI/UX. The user retention increased by 40% after the redesign. They truly understand user-centric design.",
+    rating: 5
+  },
+  {
+    id: 8,
+    client: "Neha Gupta",
+    text: "From start to finish, the SpinTech team was incredibly responsive and strategic. They don't just design; they solve real business problems.",
+    rating: 5
+  },
+  {
+    id: 9,
+    client: "Vikram Singh",
+    text: "We gave them a very tight deadline and a complex product. They managed to simplify our story beautifully without compromising on quality.",
+    rating: 5
+  },
+  {
+    id: 10,
+    client: "Anjali Desai",
+    text: "The website they built for us is not only stunning but highly functional. The conversion rate went up by 60% within the first month.",
     rating: 5
   }
 ];
@@ -97,30 +123,28 @@ const Reviews: React.FC = () => {
           <p className="text-xl text-gray-500 max-w-2xl mx-auto font-light">We build long-term relationships with our clients by delivering exceptional quality and reliability.</p>
         </motion.div>
 
-        <div className="flex flex-col gap-16 max-w-3xl mx-auto mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto mb-32">
           {REVIEWS.map((review, index) => (
             <motion.div
               key={review.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6 }}
-              className="group relative flex flex-col justify-between border-b border-charcoal/10 pb-16 last:border-0"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`group relative flex flex-col justify-between p-8 md:p-16 border-charcoal/10 border-b ${index % 2 === 0 ? 'md:border-r' : ''} ${index >= REVIEWS.length - 2 ? 'md:border-b-0' : ''} ${index === REVIEWS.length - 1 ? 'border-b-0' : ''}`}
             >
               {/* Big Quote Mark */}
-              <div className="text-8xl font-serif-display text-lime-400 opacity-30 absolute -top-10 -left-8 select-none">“</div>
+              <div className="text-8xl font-serif-display text-lime-400 opacity-30 absolute top-4 left-6 select-none">“</div>
               
-              <div className="relative z-10 pl-4 md:pl-8">
-                  <RevealType className="text-xl md:text-3xl font-medium mb-10 block">
+              <div className="relative z-10 mt-6 mb-12">
+                  <RevealType className="text-lg md:text-xl font-medium block leading-relaxed">
                     {`"${review.text}"`}
                   </RevealType>
               </div>
               
-              <div className="pl-4 md:pl-8">
-                  <div className="flex items-center gap-4 mb-2">
+              <div className="relative z-10">
+                  <div className="flex flex-col gap-1 mb-3">
                        <h4 className="font-serif-display text-2xl text-charcoal">{review.client}</h4>
-                       <span className="w-1 h-1 rounded-full bg-charcoal/30"></span>
-                       <p className="text-sm text-gray-500 uppercase tracking-widest font-normal">{review.role}</p>
                   </div>
                   <div className="flex gap-1">
                       {[...Array(review.rating)].map((_, i) => (

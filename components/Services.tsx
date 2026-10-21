@@ -6,10 +6,7 @@ const SERVICES_LIST = [
   "Branding & Strategy",
   "Website Design",
   "Website Development",
-  "Video & Animation",
-  "Print & Packaging",
-  "Brand Campaigns",
-  "Space Design"
+  "Video & Animation"
 ];
 
 const Block: React.FC<{ 
